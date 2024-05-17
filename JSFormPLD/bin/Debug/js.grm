@@ -1,0 +1,76 @@
+"Name"     = 'Enter the name of the grammar'
+"Author"   = 'Enter your name'
+"Version"  = 'The version of the grammar and/or language'
+"About"    = 'A short description of the grammar'
+
+"Start Symbol" = <Program>
+
+! -------------------------------------------------
+! Character Sets
+! -------------------------------------------------
+
+{ID Head}      = {Letter} + [_]
+{ID Tail}      = {Alphanumeric} + [_]
+{String Chars} = {Printable} + {HT} - ["\]
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+Identifier    = {ID Head}{ID Tail}*
+StringLiteral = '"' ( {String Chars} | '\' {Printable} )* '"'
+
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+
+! The grammar starts below
+<Program> ::= <StatementList>
+           
+<StatementList> ::= <StatementList> <Statement> | <Statement>  
+                 
+<VariableDeclaration> ::= 'var' Identifier '=' <Expression> ';'
+                        | 'let' Identifier '=' <Expression> ';'
+                        | 'const' Identifier '=' <Expression> ';'
+                 
+<Statement> ::= <Expression>
+              | <ForLoop>
+              | <WhileLoop>
+              | <DoWhileLoop>
+              | <VariableDeclaration>
+
+<ForLoop> ::= 'for' '(' <ForInit> ';' <Expression> ';' <Expression> ')' <Expression>
+
+<ForInit> ::= <VariableDeclaration> | <Expression>
+
+
+<WhileLoop> ::= 'while' '(' <Expression> ')'  <Expression>
+
+<DoWhileLoop> ::= 'do'  <Expression> 'while' '(' <Expression> ')' ';'
+
+<Expression>  ::= <Expression> '>'  <Add Exp> 
+               |  <Expression> '<'  <Add Exp> 
+               |  <Expression> '<=' <Add Exp> 
+               |  <Expression> '>=' <Add Exp>
+               |  <Expression> '==' <Add Exp>    
+               |  <Expression> '===' <Add Exp>    
+               |  <Expression> '!=' <Add Exp> 
+               |  <Add Exp> 
+
+<Add Exp>     ::= <Add Exp> '+' <Mult Exp>
+               |  <Add Exp> '-' <Mult Exp>
+               |  <Mult Exp> 
+
+<Mult Exp>    ::= <Mult Exp> '*' <Negate Exp> 
+               |  <Mult Exp> '/' <Negate Exp> 
+               |  <Negate Exp> 
+
+<Negate Exp>  ::= '-' <Value> 
+               |  <Value> 
+
+!Add more values to the rule below - as needed
+
+<Value>       ::= Identifier
+               |  '(' <Expression> ')'
+               
+

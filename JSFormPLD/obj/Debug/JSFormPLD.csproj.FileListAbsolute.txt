@@ -1,0 +1,12 @@
+E:\School Projects\JSFormPLD\bin\Debug\JSFormPLD.exe
+E:\School Projects\JSFormPLD\bin\Debug\JSFormPLD.pdb
+E:\School Projects\JSFormPLD\bin\Debug\CalithaLib.dll
+E:\School Projects\JSFormPLD\bin\Debug\GoldParserEngine.dll
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.csproj.AssemblyReference.cache
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.Form1.resources
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.Properties.Resources.resources
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.csproj.GenerateResource.cache
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.csproj.CoreCompileInputs.cache
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.csproj.CopyComplete
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.exe
+E:\School Projects\JSFormPLD\obj\Debug\JSFormPLD.pdb
